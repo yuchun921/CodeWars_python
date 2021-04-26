@@ -482,3 +482,288 @@ def take(arr,n):
 ```
 
 ![](https://i.imgur.com/4KsRgCJ.png)
+
+---
+
+## Beginner Series #1 School Paperwork
+> [See on CodeWars.com](https://www.codewars.com/kata/55f9b48403f6b87a7c0000bd)
+
+### **Definition**  
+Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
+
+Your task is to calculate how many blank pages do you need. `If n < 0 or m < 0 return 0.`
+
+#### **Example:**
+```
+n= 5, m=5 => 25
+n=-5, m=5 => 0
+```
+
+### **Given Code**
+```python
+def paperwork(n, m):
+    # Happy Coding! ^_^
+```
+
+### **Solution Code**
+```python
+def paperwork(n, m):
+    if n<0 or m<0:
+        return 0
+    else:
+        return n*m
+```
+
+![](https://i.imgur.com/SICadDp.png)
+
+---
+
+## Beginner Series #2 Clock
+> [See on CodeWars.com](https://www.codewars.com/kata/55f9bca8ecaa9eac7100004a)
+
+### **Definition**  
+Clock shows `h` hours, `m` minutes and `s` seconds after midnight.
+
+Your task is to write a function which returns the time since midnight in milliseconds.
+
+#### **Example:**
+```
+h = 0
+m = 1
+s = 1
+
+result = 61000
+```
+:sparkles: Input constraints:  
+　　0 <= h <= 23  
+　　0 <= m <= 59  
+　　0 <= s <= 59
+
+### **Given Code**
+```python
+def past(h, m, s):
+    # Good Luck!
+```
+
+### **Solution Code**
+```python
+def past(h, m, s):
+    return (h*3600+m*60+s)*1000
+```
+
+![](https://i.imgur.com/atYrYzb.png)
+
+---
+
+## MakeUpperCase
+> [See on CodeWars.com](https://www.codewars.com/kata/57a0556c7cb1f31ab3000ad7)
+
+### **Definition**  
+Write a function which converts the input string to uppercase.
+
+#### **Example:**
+```
+make_upper_case("hello") => "HELLO"
+make_upper_case("function"), "FUNCTION")
+```
+
+### **Given Code**
+```python
+def make_upper_case(s):
+    # Code here
+```
+
+### **Solution Code**
+```python
+def make_upper_case(s):
+    return s.upper()
+```
+
+![](https://i.imgur.com/sVYiy3F.png)
+
+---
+
+## Will there be enough space?
+> [See on CodeWars.com](https://www.codewars.com/kata/5875b200d520904a04000003)
+
+### **Definition**  
+Bob is working as a bus driver. However, he has become extremely popular amongst the city's residents. With so many passengers wanting to get aboard his bus, he sometimes has to face the problem of not enough space left on the bus! He wants you to write a simple program telling him if he will be able to fit all the passengers.
+
+You have to write a function that accepts three parameters:
+
+`cap` is the amount of people the bus can hold excluding the driver.  
+`on` is the number of people on the bus excluding the driver.  
+`wait` is the number of people waiting to get on to the bus excluding the driver.  
+If there is **enough space, return 0**, and if there isn't, return the number of passengers he can't take.
+
+#### **Example:**
+```
+cap = 10, on = 5, wait = 5 => 0 # He can fit all 5 passengers
+cap = 100, on = 60, wait = 50 => 10 # He can't fit 10 of the 50 waiting
+```
+:sparkles: 如果車位足夠，return 0；不夠的話，return 無法上車的人數。
+
+### **Given Code**
+```python
+def enough(cap, on, wait):
+    # Your code here
+```
+
+### **Solution Code**
+```python
+def enough(cap, on, wait):
+    if on+wait<=cap:
+        return 0
+    else:
+        return wait-(cap-on)
+```
+
+![](https://i.imgur.com/ogz5vwU.png)
+
+---
+
+## Powers of 2
+> [See on CodeWars.com](https://www.codewars.com/kata/57a083a57cb1f31db7000028)
+
+### **Definition**  
+Complete the function that takes a non-negative integer `n` as input, and returns a list of all the powers of 2 with the exponent ranging from 0 to n (inclusive).
+
+#### **Example:**
+```
+n = 0  ==> [1]        # [2^0]
+n = 1  ==> [1, 2]     # [2^0, 2^1]
+n = 2  ==> [1, 2, 4]  # [2^0, 2^1, 2^2]
+```
+
+### **Given Code**
+```python
+def powers_of_two(n):
+    return []
+```
+
+### **Solution Code**
+```python
+def powers_of_two(n):
+    arr = []
+    for i in range(0,n+1):
+        arr.append(2**i)
+    return arr
+```
+
+![](https://i.imgur.com/Er8Qxl3.png)
+
+---
+
+## Drink about
+> [See on CodeWars.com](https://www.codewars.com/kata/56170e844da7c6f647000063)
+
+### **Definition**  
+Make a function that receive age, and return what they drink.
+> Kids drink toddy.  
+> Teens drink coke.  
+> Young adults drink beer.  
+> Adults drink whisky.
+
+#### **Example:**
+```
+13 --> "drink toddy"
+17 --> "drink coke"
+18 --> "drink beer"
+20 --> "drink beer"
+30 --> "drink whisky"
+```
+ :sparkles: constraints  
+　　Children under 14 old.  
+　　Teens under 18 old.  
+　　Young under 21 old.  
+　　Adults have 21 or more.
+### **Given Code**
+```python
+def people_with_age_drink(age):
+    return ''
+```
+
+### **Solution Code**
+```python
+def people_with_age_drink(age):
+    if age < 14:
+        return 'drink toddy'
+    elif age <18:
+        return 'drink coke'
+    elif age <21:
+        return 'drink beer'
+    elif age >= 21:
+        return 'drink whisky'
+```
+
+![](https://i.imgur.com/tKvBg0U.png)
+
+---
+
+## Pre-FizzBuzz Workout #1
+> [See on CodeWars.com](https://www.codewars.com/kata/569e09850a8e371ab200000b)
+
+### **Definition**  
+This is the first step to understanding FizzBuzz.
+
+Your inputs: a positive integer, n, greater than or equal to one. n is provided, you have NO CONTROL over its value.
+
+Your expected output is an array of positive integers from 1 to n (inclusive).
+
+Your job is to write an algorithm that gets you from the input to the output.
+
+#### **Example:**
+```
+pre_fizz(3) => [1,2,3]
+pre_fizz(4) => [1,2,3,4]
+```
+
+### **Given Code**
+```python
+def pre_fizz(n):
+    #your code here
+```
+
+### **Solution Code**
+```python
+def pre_fizz(n):
+    arr = []
+    for i in range(1, n+1):
+        arr.append(i)
+    return arr
+```
+
+![](https://i.imgur.com/IiJ6R1S.png)
+
+---
+
+## Swap Values
+> [See on CodeWars.com](https://www.codewars.com/kata/5388f0e00b24c5635e000fc6)
+
+### **Definition**  
+I would like to be able to pass an array with two elements to my swapValues function to swap the values. However it appears that the values aren't changing.
+
+Can you figure out what's wrong here?
+
+#### **Example:**
+```
+arr = [1, 2] => [2, 1]
+```
+
+### **Given Code**
+```python
+def swap_values(args): 
+    args[0] = args[1]
+    args[1] = args[0]
+```
+
+### **Solution Code**
+```python
+def swap_values(args): 
+    args[0], args[1] = args[1], args[0]
+    return args
+```
+
+![](https://i.imgur.com/Xildcxi.png)
+
+
