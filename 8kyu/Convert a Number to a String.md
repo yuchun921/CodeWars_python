@@ -1,4 +1,4 @@
-# Python Codewars Solution
+# Codewars: Python Solution
 
 > [name=Liu, Yu-Chun] [time=Tue, Apr 26, 2021 09:24 PM]
 ###### tags: `python` `codewars`
