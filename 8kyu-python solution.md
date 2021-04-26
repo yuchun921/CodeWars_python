@@ -348,7 +348,7 @@ def remove_char(s):
 
 ## Abbreviate a Two Word Name
 > [See on CodeWars.com](https://www.codewars.com/kata/57eadb7ecd143f4c9c0000a3)
-> 
+
 ### **Definition**  
 Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
 
@@ -379,3 +379,106 @@ def abbrev_name(name):
 ```
 
 ![](https://i.imgur.com/fbRg1YI.png)
+
+---
+
+## Calculate average
+> [See on CodeWars.com](https://www.codewars.com/kata/57a2013acf1fa5bfc4000921)
+ 
+### **Definition**  
+Write a function which calculates the average of the numbers in a given list.
+
+Note: Empty arrays should return 0.
+
+#### **Example:**
+```
+[1, 2, 3] => avg: 2
+[] => avg: 0
+```
+:sparkles: 以空格分界，抓取每個字串的第一個字元
+
+### **Given Code**
+```python
+def find_average(numbers):
+    # your code here
+    pass
+```
+
+### **Solution Code**
+```python
+def find_average(numbers):
+    sum = 0
+    if len(numbers) == 0:
+        return 0
+    else:
+        for i in range(len(numbers)):
+            sum = sum+numbers[i]
+        avg = sum/len(numbers)
+        return avg
+```
+
+![](https://i.imgur.com/F30HcHb.png)
+
+---
+
+## Area or Perimeter
+> [See on CodeWars.com](https://www.codewars.com/kata/5ab6538b379d20ad880000ab)
+
+### **Definition**  
+You are given the length and width of a 4-sided polygon. The polygon can either be a rectangle or a square.  
+If it is a square, return its area.  
+If it is a rectangle, return its perimeter. 
+
+Note: It is a square if its length and width are equal, otherwise it is a rectangle. 
+
+#### **Example:**
+```
+area_or_perimeter(6, 10) => 32
+area_or_perimeter(3, 3) => 9
+```
+:sparkles: 長寬相等=>正方形, 不相等=>矩形
+
+### **Given Code**
+```python
+def area_or_perimeter(l , w):
+    # return your answer
+```
+
+### **Solution Code**
+```python
+def area_or_perimeter(l , w):
+    if l==w:
+        return l*w
+    else:
+        return (l+w)*2
+```
+
+![](https://i.imgur.com/FML73mZ.png)
+
+---
+
+## Enumerable Magic #25 - Take the First N Elements
+> [See on CodeWars.com](https://www.codewars.com/kata/545afd0761aa4c3055001386)
+
+### **Definition**  
+Create a method take that accepts a list/array and a number n, and returns a list/array array of the first n elements from the list/array.
+
+#### **Example:**
+```
+take([0, 1, 2, 3, 5, 8, 13], 3) => [0, 1, 2], #should return the first 3 items
+take([2, 4, 14, 18, 55], 2) => [2, 4], #should return the first 2 items
+```
+
+### **Given Code**
+```python
+def take(arr,n):
+    pass
+```
+
+### **Solution Code**
+```python
+def take(arr,n):
+     return arr[:n]
+```
+
+![](https://i.imgur.com/4KsRgCJ.png)
