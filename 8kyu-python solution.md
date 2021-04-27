@@ -1565,6 +1565,256 @@ def fake_bin(x):
 
 ![](https://i.imgur.com/2CkTGiD.png)
 
+---
+
+## My head is at the wrong end!
+> [See on CodeWars.com](https://www.codewars.com/kata/56f699cd9400f5b7d8000b55)
+
+### **Definition**  
+You're at the zoo... all the meerkats look weird. Something has gone terribly wrong - someone has gone and switched their heads and tails around!
+
+Save the animals by switching them back. You will be given an array which will have three values (tail, body, head). It is your job to re-arrange the array so that the animal is the right way round (head, body, tail).
+
+Same goes for all the other arrays/lists that you will get in the tests: you have to change the element positions with the same exact logics
+
+Simples!
+
+#### **Example:**
+```
+fix_the_meerkat(["tail", "body", "head"]) => ["head", "body", "tail"]
+```
+:sparkles: reverse array
+
+### **Given Code**
+```python
+def fix_the_meerkat(arr):
+    #your code here
+```
+
+### **Solution Code**
+```python
+def fix_the_meerkat(arr):
+    arr.reverse()
+    return arr
+```
+
+![](https://i.imgur.com/JH7W3XM.png)
+
+---
+
+## Get Nth Even Number
+> [See on CodeWars.com](https://www.codewars.com/kata/5933a1f8552bc2750a0000ed)
+
+### **Definition**  
+Return the Nth Even Number
+
+#### **Example:**
+```
+1 --> 0 (the first even number is 0)
+3 --> 4 (the 3rd even number is 4 (0, 2, 4))
+100 --> 198
+1298734 --> 2597466
+```
+:sparkles: 
+
+### **Given Code**
+```python
+def nth_even(n):
+    #your code here
+```
+
+### **Solution Code**
+```python
+def nth_even(n):
+    return (n-1)*2
+```
+
+![](https://i.imgur.com/U9Ajumu.png)
+
+
+---
+
+## What is between?
+> [See on CodeWars.com](https://www.codewars.com/kata/55ecd718f46fba02e5000029)
+
+### **Definition**  
+Complete the function that takes two integers (a, b, where a < b) and return an array of all integers between the input parameters, including them.
+
+#### **Example:**
+```
+a = 1, b = 4 => [1, 2, 3, 4]
+```
+:sparkles: 
+
+### **Given Code**
+```python
+def between(a,b):
+    # good luck
+    pass
+```
+
+### **Solution Code**
+```python
+def between(a,b):
+    arr = []
+    for i in range(a, b+1):
+        arr.append(i)
+    return arr
+```
+
+![](https://i.imgur.com/t23UNqA.png)
+
+---
+
+## DNA to RNA Conversion
+> [See on CodeWars.com](https://www.codewars.com/kata/5556282156230d0e5e000089)
+
+### **Definition**  
+Deoxyribonucleic acid, DNA is the primary information storage molecule in biological systems. It is composed of four nucleic acid bases Guanine ('G'), Cytosine ('C'), Adenine ('A'), and Thymine ('T').
+
+Ribonucleic acid, RNA, is the primary messenger molecule in cells. RNA differs slightly from DNA its chemical structure and contains no Thymine. In RNA Thymine is replaced by another nucleic acid Uracil ('U').
+
+Create a function which translates a given DNA string into RNA.
+#### **Example:**
+```
+"GCAT"  =>  "GCAU"
+```
+:sparkles: 
+
+### **Given Code**
+```python
+def dna_to_rna(dna):
+    return
+```
+
+### **Solution Code**
+```python
+def dna_to_rna(dna):
+    s ='' 
+    for i in dna:
+        if i == 'T':
+            s = s + "U"
+        else:
+            s = s + i
+    return s
+```
+
+```python
+def dna_to_rna(dna):
+    arr = dna.replace('T', 'U')
+    return arr
+```
+
+![](https://i.imgur.com/UuRKVA7.png)
+
+---
+
+## Opposites Attract
+> [See on CodeWars.com](https://www.codewars.com/kata/555086d53eac039a2a000083)
+
+### **Definition**  
+Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower each.  
+If one of the flowers has an even number of petals and the other has an odd number of petals it means they are in love.
+
+Write a function that will take the number of petals of each flower and return true if they are in love and false if they aren't.
+#### **Example:**
+```
+lovefunc(2,2) => False
+lovefunc(0,1) => True
+```
+:sparkles: 
+
+### **Given Code**
+```python
+def lovefunc( flower1, flower2 ):
+    # ...
+```
+
+### **Solution Code**
+```python
+def lovefunc( flower1, flower2 ):
+    if (flower1+flower2)%2 != 0:
+        return True
+    else:
+        return False
+```
+
+![](https://i.imgur.com/3G0I0Ft.png)
+
+---
+
+## Transportation on vacation
+> [See on CodeWars.com](https://www.codewars.com/kata/568d0dd208ee69389d000016)
+
+### **Definition**  
+After a hard quarter in the office you decide to get some rest on a vacation. So you will book a flight for you and your girlfriend and try to leave all the mess behind you.
+
+You will need a rental car in order for you to get around in your vacation. The manager of the car rental makes you some good offers.
+
+Every day you rent the car costs 40.  
+If you rent the car for 7 or more days, you get 50 off your total.  
+Alternatively, if you rent the car for 3 or more days, you get 20 off your total.
+ 
+Write a code that gives out the total amount for different days(d).
+
+#### **Example:**
+```
+rental_car_cost(4) => 140
+rental_car_cost(8) => 270
+```
+:sparkles: 
+
+### **Given Code**
+```python
+def rental_car_cost(d):
+    # your code
+```
+
+### **Solution Code**
+```python
+def rental_car_cost(d):
+    price = 0
+    if d >=7:
+        price = 40*d-50
+    elif d >=3:
+        price = 40*d-20
+    else:
+        price = 40*d
+    return price
+```
+
+![](https://i.imgur.com/Atan9ym.png)
+
+---
+
+## Beginner Series #4 Cockroach
+> [See on CodeWars.com](https://www.codewars.com/kata/55fab1ffda3e2e44f00000c6)
+
+### **Definition**  
+The cockroach is one of the fastest insects. Write a function which takes its speed in km per hour and returns it in cm per second, rounded down to the integer (= floored).
+
+#### **Example:**
+```
+1.08 --> 30
+```
+:sparkles: 速度: km/hr => cm/s
+
+### **Given Code**
+```python
+def cockroach_speed(s):
+    # Good Luck!
+```
+
+### **Solution Code**
+```python
+def cockroach_speed(s):
+    # Good Luck!
+    return int((s*1000*100)/(1*60*60))
+```
+
+![](https://i.imgur.com/REb8rPy.png)
+
+
 
 
 
