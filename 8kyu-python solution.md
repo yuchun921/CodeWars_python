@@ -1,7 +1,7 @@
 # Python Codewars Solution - 8kyu
 
 > [name=Liu, Yu-Chun] [time=Tue, Apr 26, 2021 09:24 PM]
-###### tags: `python` `codewars`
+###### tags: `Python` `codewars`
 
 ---
 
@@ -766,4 +766,806 @@ def swap_values(args):
 
 ![](https://i.imgur.com/Xildcxi.png)
 
+---
 
+## Filter out the geese
+> [See on CodeWars.com](https://www.codewars.com/kata/57ee4a67108d3fd9eb0000e7)
+
+### **Definition**  
+Write a function, `gooseFilter / goose-filter / goose_filter / GooseFilter`, that takes an array of strings as an argument and returns a filtered array containing the same elements but with the 'geese' removed.
+
+#### **Example:**
+```
+geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"]
+birds = ["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]
+→ ["Mallard", "Hook Bill", "Crested", "Blue Swedish"]
+```
+
+### **Given Code**
+```python
+geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"]
+def goose_filter(birds):
+    #your code here
+```
+
+### **Solution Code**
+```python
+geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"]
+def goose_filter(birds):
+    ans = []
+    global geese
+    for i in birds:
+        if not i in geese:
+            ans.append(i)
+    return ans
+```
+
+![](https://i.imgur.com/uyk0a6Y.png)
+
+---
+
+## Generate range of integers
+> [See on CodeWars.com](https://www.codewars.com/kata/55eca815d0d20962e1000106)
+
+### **Definition**  
+Implement a function named generateRange(min, max, step), which takes three arguments and generates a range of integers from min to max, with the step.  
+The first integer is the minimum value, the second is the maximum of the range and the third is the step. (min < max)
+
+#### **Example:**
+```
+generate_range(2, 10, 2) => [2,4,6,8,10]
+generate_range(1, 10, 3) => [1,4,7,10]
+```
+
+### **Given Code**
+```python
+def generate_range(min, max, step):
+    pass
+```
+
+### **Solution Code**
+```python
+def generate_range(min, max, step):
+    result = []
+    for i in range (min, max + 1, step):
+        result.append(i)
+    return result
+```
+
+![](https://i.imgur.com/QGwhMj3.png)
+
+---
+
+## The Wide-Mouthed frog!
+> [See on CodeWars.com](https://www.codewars.com/kata/57ec8bd8f670e9a47a000f89)
+
+### **Definition**  
+The wide mouth frog is particularly interested in the eating habits of other creatures.
+
+He just can't stop asking the creatures he encounters what they like to eat. But then he meet the alligator who just LOVES to eat wide-mouthed frogs!
+
+When he meets the alligator, it then makes a tiny mouth.
+
+Your goal in this kata is to create complete the mouth_size method this method take one argument animal which corresponds to the animal encountered by frog. If this one is an alligator (case insensitive) return small otherwise return wide.
+
+#### **Example:**
+```
+mouth_size("ant bear") => "wide"
+mouth_size("alligator") => "small"
+```
+
+### **Given Code**
+```python
+def mouth_size(animal): 
+  # code here
+```
+
+### **Solution Code**
+```python
+def mouth_size(animal): 
+    if animal.lower() == "alligator":
+        return 'small'
+    else:
+        return 'wide'
+```
+
+![](https://i.imgur.com/PPsyjKR.png)
+
+---
+
+## Quarter of the year
+> [See on CodeWars.com](https://www.codewars.com/kata/5ce9c1000bab0b001134f5af)
+
+### **Definition**  
+Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
+
+For example: month 2 (February), is part of the first quarter; month 6 (June), is part of the second quarter; and month 11 (November), is part of the fourth quarter.
+
+#### **Example:**
+```
+quarter_of(8) => 3
+```
+
+### **Given Code**
+```python
+def quarter_of(month):
+    # your code here
+```
+
+### **Solution Code**
+```python
+def quarter_of(month):
+    if month <= 3:
+        return 1
+    elif month <=6:
+        return 2
+    elif month <=9:
+        return 3
+    elif month <=12:
+        return 4
+```
+
+![](https://i.imgur.com/KdD9BEE.png)
+
+---
+
+## Miles per gallon to kilometers per liter
+> [See on CodeWars.com](https://www.codewars.com/kata/557b5e0bddf29d861400005d)
+
+### **Definition**  
+Sometimes, I want to quickly be able to convert miles per imperial gallon into kilometers per liter.
+
+Create an application that will display the number of kilometers per liter (output) based on the number of miles per imperial gallon (input).
+
+Make sure to round off the result to two decimal points. If the answer ends with a 0, it should be rounded off without the 0. So instead of 5.50, we should get 5.5.
+
+Some useful associations relevant to this kata: `1 Imperial Gallon = 4.54609188 litres 1 Mile = 1.609344 kilometres`
+
+#### **Example:**
+```
+converter(12), 4.25
+```
+
+### **Given Code**
+```python
+def converter(mpg):
+    #your code here
+```
+
+### **Solution Code**
+```python
+def converter(mpg):
+    result=(mpg*(1.609344/4.54609188))
+    return round(result, 2)
+```
+
+![](https://i.imgur.com/HC7kz2F.png)
+
+---
+
+## FIXME: Replace all dots
+> [See on CodeWars.com](https://www.codewars.com/kata/596c6eb85b0f515834000049)
+
+### **Definition**  
+The code provided is supposed replace all the dots . in the specified String str with dashes - But it's not working properly.
+
+#### **Example:**
+```
+replace_dots("one.two.three") => "one-two-three"
+```
+
+### **Given Code**
+```python
+import re
+def replace_dots(str):
+    return re.sub(r".", "-", str)
+```
+
+### **Solution Code**
+```python
+def replace_dots(str):
+    s = str.replace('.', '-')
+    return s
+```
+
+![](https://i.imgur.com/ZwachFs.png)
+
+---
+
+## Cat years, Dog years
+> [See on CodeWars.com](https://www.codewars.com/kata/5a6663e9fd56cb5ab800008b)
+
+### **Definition**  
+I have a cat and a dog.
+
+I got them at the same time as kitten/puppy. That was `humanYears` years ago.
+
+Return their respective ages now as `[humanYears,catYears,dogYears]`
+
+NOTES:
+
+humanYears >= 1  
+humanYears are whole numbers only
+
+**Cat Years**  
+15 cat years for first year  
++9 cat years for second year  
++4 cat years for each year after that
+
+**Dog Years**  
+15 dog years for first year  
++9 dog years for second year  
++5 dog years for each year after that
+
+#### **Example:**
+```
+human_years_cat_years_dog_years(2) => [2,24,24]
+human_years_cat_years_dog_years(10) => [10,56,64]
+```
+
+### **Given Code**
+```python
+def human_years_cat_years_dog_years(human_years):
+    # Your code here
+    return [0,0,0]
+```
+
+### **Solution Code**
+```python
+def human_years_cat_years_dog_years(human_years):
+    cat_years = 0
+    dog_years = 0
+    
+    if human_years == 1:
+        cat_years = 15
+        dog_years = 15
+    elif human_years == 2:
+        cat_years = 24
+        dog_years = 24
+    elif human_years >= 3:
+        cat_years = 24 + (human_years-2)*4
+        dog_years = 24 + (human_years-2)*5
+        
+    return [human_years, cat_years, dog_years]
+```
+
+![](https://i.imgur.com/PjCbHqy.png)
+
+---
+
+## Reversed sequence
+> [See on CodeWars.com](https://www.codewars.com/kata/5a00e05cc374cb34d100000d)
+
+### **Definition**  
+Build a function that returns an array of integers from `n` to 1 where `n`>0.
+
+#### **Example:**
+```
+n=5 => [5,4,3,2,1]
+```
+
+### **Given Code**
+```python
+def reverse_seq(n):
+    pass
+```
+
+### **Solution Code**
+```python
+def reverse_seq(n):
+    arr = []
+    for i in range(1, n+1):
+        arr.append(i)
+    arr.reverse()
+    return arr
+```
+
+![](https://i.imgur.com/A40DUkb.png)
+
+---
+
+## Remove exclamation marks
+> [See on CodeWars.com](https://www.codewars.com/kata/57a0885cbb9944e24c00008e)
+
+### **Definition**  
+Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+
+#### **Example:**
+```
+n=5 => [5,4,3,2,1]
+```
+
+### **Given Code**
+```python
+def reverse_seq(n):
+    pass
+```
+
+### **Solution Code**
+```python
+def reverse_seq(n):
+    arr = []
+    for i in range(1, n+1):
+        arr.append(i)
+    arr.reverse()
+    return arr
+```
+
+![](https://i.imgur.com/A40DUkb.png)
+
+---
+
+## Template Strings
+> [See on CodeWars.com](https://www.codewars.com/kata/55a14f75ceda999ced000048)
+
+### **Definition**  
+Template Strings, this kata is mainly aimed at the new JS ES6 Update introducing Template Strings
+
+#### **Example:**
+```
+temple_strings("Animals","Good") => 'Animals are Good'
+```
+
+### **Given Code**
+```python
+def temple_strings(obj, feature): 
+    # your code here
+    pass
+```
+
+### **Solution Code**
+```python
+def temple_strings(obj, feature): 
+    s = obj + ' are ' + feature
+    return s
+```
+
+![](https://i.imgur.com/iulO7Zq.png)
+
+---
+
+## Lario and Muigi Pipe Problem
+> [See on CodeWars.com](https://www.codewars.com/kata/56b29582461215098d00000f)
+
+### **Definition**  
+Looks like some hoodlum plumber and his brother has been running around and damaging your stages again.
+
+The pipes connecting your level's stages together need to be fixed before you receive any more complaints. Each pipe should be connecting, since the levels ascend, you can assume every number in the sequence after the first index will be greater than the previous and that there will be no duplicates.
+
+#### **Example:**
+```
+Input: 1,3,5,6,7,8
+
+Output: 1,2,3,4,5,6,7,8
+```
+
+### **Given Code**
+```python
+def pipe_fix(nums):
+	return []
+```
+
+### **Solution Code**
+```python
+def pipe_fix(nums):
+    arr = []
+    for i in range(nums[0],nums[len(nums)-1]+1):
+        arr.append(i)
+    return arr
+```
+
+![](https://i.imgur.com/l7QZ2Vx.png)
+
+---
+
+## Find the smallest integer in the array
+> [See on CodeWars.com](https://www.codewars.com/kata/55a2d7ebe362935a210000b2)
+
+### **Definition**  
+Given an array of integers your solution should find the smallest integer.
+
+#### **Example:**
+```
+[34, 15, 88, 2] => 2
+[34, -345, -1, 100] => -345
+```
+
+### **Given Code**
+```python
+def find_smallest_int(arr):
+    # Code here
+```
+
+### **Solution Code**
+```python
+def find_smallest_int(arr):
+    return min(arr)
+```
+
+![](https://i.imgur.com/BudRqUe.png)
+
+---
+
+## You Can't Code Under Pressure #1
+> [See on CodeWars.com](https://www.codewars.com/kata/53ee5429ba190077850011d4)
+
+### **Definition**  
+Code as fast as you can! You need to double the integer and return it.
+
+#### **Example:**
+```
+double_integer(2) => 4
+```
+:sparkles: output = 兩倍input值
+
+### **Given Code**
+```python
+def double_integer(i):
+    pass # Double the integer and return it!
+```
+
+### **Solution Code**
+```python
+def double_integer(i):
+    return 2*i
+```
+
+![](https://i.imgur.com/UUkhVBC.png)
+
+---
+
+## Grasshopper - Personalized Message
+> [See on CodeWars.com](https://www.codewars.com/kata/5772da22b89313a4d50012f7)
+
+### **Definition**  
+Create a function that gives a personalized greeting. This function takes two parameters: `name` and `owner`.
+
+#### **Example:**
+```
+name equals owner => 'Hello boss'
+otherwise         => 'Hello guest'
+```
+
+### **Given Code**
+```python
+def greet(name, owner):
+    # Add code here
+```
+
+### **Solution Code**
+```python
+def greet(name, owner):
+    return 'Hello boss' if name==owner else 'Hello guest'
+```
+
+![](https://i.imgur.com/UUkhVBC.png)
+
+---
+
+## Sort and Star
+> [See on CodeWars.com](https://www.codewars.com/kata/57cfdf34902f6ba3d300001e)
+
+### **Definition**  
+You will be given a vector of strings. You must sort it alphabetically (case-sensitive, and based on the ASCII values of the chars) and then return the first value.
+
+The returned value must be a string, and have ``"***"`` between each of its letters.
+
+You should not remove or add elements from/to the array.
+
+#### **Example:**
+```
+two_sort(["bitcoin", "take", "over", "knows", "perhaps"]) => 'b***i***t***c***o***i***n'
+```
+
+### **Given Code**
+```python
+def two_sort(array):
+    # your code here
+```
+
+### **Solution Code**
+```python
+def two_sort(array):
+    array.sort()
+    result = '***'.join(array[0])
+    return result
+```
+
+![](https://i.imgur.com/JDYq1Fg.png)
+
+---
+
+## Is there a vowel in there?
+> [See on CodeWars.com](https://www.codewars.com/kata/57cff961eca260b71900008f)
+
+### **Definition**  
+Given an array of numbers, check if any of the numbers are the character codes for lower case vowels `(a, e, i, o, u)`.
+
+If they are, change the array value to a string of that vowel.
+
+Return the resulting array.
+>ASCII:  
+　　a: 97  
+　　e: 101  
+　　i: 105  
+　　o: 111  
+　　u: 117
+
+#### **Example:**
+```
+is_vow([107, 105, 110, 107, 101, 102, 105]) => [107, 'i', 110, 107, 'e', 102, 'i']
+```
+:sparkles: 若array中有母音的ASCII轉成母音，其餘正常輸出
+
+### **Given Code**
+```python
+def is_vow(inp):
+    pass
+```
+
+### **Solution Code**
+```python
+def is_vow(inp):
+    l=[]
+    for each in inp:
+        if each == 97:
+            l.append('a')
+        elif each == 101:
+            l.append('e')
+        elif each == 105:
+            l.append('i')
+        elif each == 111:
+            l.append('o')
+        elif each == 117:
+            l.append('u')
+        else:
+            l.append(each)
+    return l
+```
+
+![](https://i.imgur.com/aQytt64.png)
+
+---
+
+## 101 Dalmatians - squash the bugs, not the dogs!
+> [See on CodeWars.com](https://www.codewars.com/kata/56f6919a6b88de18ff000b36)
+
+### **Definition**  
+Your friend has been out shopping for puppies (what a time to be alive!)... He arrives back with multiple dogs, and you simply do not know how to respond!
+
+By repairing the function provided, you will find out exactly how you should respond, depending on the number of dogs he has.
+
+The number of dogs will always be a number and there will always be at least 1 dog.
+
+#### **Example:**
+```
+how_many_dalmatians(8) => "Hardly any"
+how_many_dalmatians(100) => "Woah that's a lot of dogs!
+```
+:sparkles:
+
+### **Given Code**
+```python
+def how_many_dalmatians(n):
+  dogs ["Hardly any", "More than a handful!", "Woah that's a lot of dogs!", "101 DALMATIONS!!!"];
+  
+  respond = if number <= 10 then dogs[0] else if (number <= 50 then dogs[1] else (number = 101  dogs[3] else dogs[2]
+  
+return respond
+```
+
+### **Solution Code**
+```python
+def how_many_dalmatians(n):
+    dogs = ["Hardly any", "More than a handful!", "Woah that's a lot of dogs!", "101 DALMATIONS!!!"];
+    
+    if n <= 10:
+        s=dogs[0]
+    elif n <= 50:
+        s=dogs[1]
+    elif n == 101:
+        s=dogs[3]
+    else:
+        s=dogs[2]
+        
+    return s
+```
+
+![](https://i.imgur.com/bB6QArX.png)
+
+---
+
+## Squash the bugs
+> [See on CodeWars.com](https://www.codewars.com/kata/56f173a35b91399a05000cb7)
+
+### **Definition**  
+Simple challenge - eliminate all bugs from the supplied code so that the code runs and outputs the expected value. `Output should be the length of the longest word, as a number.`
+
+There will only be one 'longest' word.
+
+#### **Example:**
+```
+find_longest("Sausage chops") => 7
+find_longest("Hello world") => 5
+```
+:sparkles:
+
+### **Given Code**
+```python
+def find_longest(string):
+    spl = str.split(" ")
+    longest = 0
+    i=0
+    while (i > spl.length):
+    if (spl(i).length > longest): longest = spl[i].length
+    return longest
+```
+
+### **Solution Code**
+```python
+def find_longest(string):
+    spl = string.split(" ")
+    longest = 0
+    for i in range(0, len(spl)):
+        if len(spl[i])> longest:
+            longest = len(spl[i])
+    
+    return longest
+```
+
+![](https://i.imgur.com/33cdlYR.png)
+
+---
+
+## You only need one - Beginner
+> [See on CodeWars.com](https://www.codewars.com/kata/57cc975ed542d3148f00015b)
+
+### **Definition**  
+You will be given an array a and `a` value `x`.  
+All you need to do is check whether the provided array contains the value.
+
+Array can contain numbers or strings. X can be either.
+
+Return `true` if the array contains the value, `false` if not.
+
+#### **Example:**
+```
+check([66, 101], 66) => True, ()),
+check([78, 117, 110, 99, 104, 117, 107, 115], 8) => False
+```
+:sparkles:elem在seq中，就True
+
+### **Given Code**
+```python
+def check(seq, elem):
+    pass
+```
+
+### **Solution Code**
+```python
+def check(seq, elem):
+    if elem in seq:
+        return True
+    else:
+        return False
+```
+
+![](https://i.imgur.com/qnv6Y7W.png)
+
+---
+
+## Sum Mixed Array
+> [See on CodeWars.com](https://www.codewars.com/kata/57eaeb9578748ff92a000009)
+
+### **Definition**  
+Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+
+Return your answer as a number.
+
+#### **Example:**
+```
+sum_mix([9, 3, '7', '3']) => 22
+```
+:sparkles:將str轉成int相加
+
+### **Given Code**
+```python
+def sum_mix(arr):
+    #your code here
+```
+
+### **Solution Code**
+```python
+def sum_mix(arr):
+    s = 0
+    for i in range(0,len(arr)):
+        s = s+int(arr[i])
+    return s
+```
+
+![](https://i.imgur.com/9fsAz7u.png)
+
+---
+
+## Is this my tail?
+> [See on CodeWars.com](https://www.codewars.com/kata/56f695399400f5d9ef000af5)
+
+### **Definition**  
+Some new animals have arrived at the zoo. The zoo keeper is concerned that perhaps the animals do not have the right tails. To help her, you must correct the broken function to make sure that the second argument (tail), is the same as the last letter of the first argument (body) - otherwise the tail wouldn't fit!
+
+If the tail is right return true, else return false.
+
+The arguments will always be strings, and normal letters.
+
+For Haskell, body has the type of `String` and tail has the type of `Char`.  
+For Go, body has type string and tail has type rune.
+
+#### **Example:**
+```
+correct_tail("Meerkat", "t") => True
+correct_tail("Emu", "t") => False
+```
+:sparkles:
+
+### **Given Code**
+```python
+def correct_tail(body, tail):
+     sub = body.substr(len(body)-len(tail.length)
+        if sub = tai:
+    return True
+        else:
+    return False
+```
+
+### **Solution Code**
+```python
+def correct_tail(body, tail):
+    c = body[len(body)-1:]
+    if c == tail:
+        return True
+    else:
+        return False
+```
+
+![](https://i.imgur.com/xEAzmyz.png)
+
+---
+
+## Fake Binary
+> [See on CodeWars.com](https://www.codewars.com/kata/57eae65a4321032ce000002d)
+
+### **Definition**  
+Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'.  
+Return the resulting string.
+
+#### **Example:**
+```
+fake_bin("45385593107843568") => "01011110001100111"
+fake_bin("345678") => "001111"
+```
+:sparkles:>=5 : 1 ; <5 : 0
+
+### **Given Code**
+```python
+def fake_bin(x):
+    pass
+```
+
+### **Solution Code**
+```python
+def fake_bin(x):
+    ans = ''
+    for i in x:
+        if int(i) < 5:
+            ans = ans+'0'
+        else:
+            ans = ans+'1'
+    return ans
+```
+
+![](https://i.imgur.com/2CkTGiD.png)
+
+
+
+
+<style>.markdown-body { max-width: 1000px; }</style>
