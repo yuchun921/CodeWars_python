@@ -888,9 +888,241 @@ def how_much_i_love_you(nb_petals):
 
 ![](https://i.imgur.com/z6vRRZM.png)
 
+---
 
+## Convert a string to an array
+> [See on CodeWars.com](https://www.codewars.com/kata/57e76bc428d6fbc2d500036d)
 
+### **Definition**  
+Write a function to split a string and convert it into an array of words.
 
+#### **Example:**
+```
+"Robin Singh" ==> ["Robin", "Singh"]
+"I love arrays they are my favorite" ==> ["I", "love", "arrays", "they", "are", "my", "favorite"]
+```
+:sparkles: 
+
+### **Given Code**
+```python
+def string_to_array(s):
+    # your code here
+```
+
+### **Solution Code**
+```python
+def string_to_array(s):
+    return s.split(" ")
+```
+
+![](https://i.imgur.com/wZi1IPM.png)
+
+---
+
+## Can we divide it?
+> [See on CodeWars.com](https://www.codewars.com/kata/577a98a6ae28071780000989)
+
+### **Definition**  
+Your task is to create functionisDivideBy (or is_divide_by) to check if an integer number is divisible by each out of two arguments.
+
+#### **Example:**
+```
+(45, 1, 6)    ->  false
+(45, 5, 15)   ->  true
+
+(4, 1, 4)     ->  true
+(15, -5, 3)   ->  true
+```
+:sparkles: 
+
+### **Given Code**
+```python
+def is_divide_by(number, a, b):
+    return # good luck
+```
+
+### **Solution Code**
+```python
+def is_divide_by(number, a, b):
+    if number%a==0 and number%b==0:
+        return True
+    else:
+        return False
+```
+
+![](https://i.imgur.com/wZi1IPM.png)
+
+---
+
+## Find Maximum and Minimum Values of a List
+> [See on CodeWars.com](https://www.codewars.com/kata/5a2b703dc5e2845c0900005a)
+
+### **Definition**  
+Your task is to make two functions, `max` and `min` (`maximum` and `minimum` in PHP and Python, maxi and mini in Julia) that take a(n) array/vector of integers `list` as input and outputs, respectively, the largest and lowest number in that array/vector.
+
+#### **Example:**
+```
+maximun([4,6,2,1,9,63,-134,566]) => 566
+minimun([-52, 56, 30, 29, -54, 0, -110]) => -110
+maximun([5]) => 5
+minimun([42, 54, 65, 87, 0]) => 0
+```
+:sparkles: 
+
+### **Given Code**
+```python
+def minimum(arr):
+    #your code here...
+
+def maximum(arr):
+    #...and here
+```
+
+### **Solution Code**
+```python
+def minimum(arr):
+    minN = min(arr)
+    return minN
+
+def maximum(arr):
+    maxN = max(arr)
+    return maxN
+```
+
+![](https://i.imgur.com/wC9cssB.png)
+
+---
+
+## Count of positives / sum of negatives
+> [See on CodeWars.com](https://www.codewars.com/kata/576bb71bbbcf0951d5000044)
+
+### **Definition**  
+Given an array of integers.
+
+Return an array, where the first element is the count of positives numbers and the second element is sum of negative numbers.
+
+If the input array is empty or null, return an empty array.
+
+#### **Example:**
+```
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15] => [10, -65]
+```
+:sparkles: 
+
+### **Given Code**
+```python
+def count_positives_sum_negatives(arr):
+    #your code here
+```
+
+### **Solution Code**
+```python
+def count_positives_sum_negatives(arr):
+    p = 0
+    n = 0
+    ar = []
+    if len(arr) == 0:
+        return ar
+    for i in range(0, len(arr)):
+        if arr[i] > 0:
+            p = p+1
+        elif arr[i] < 0:
+            n = n+arr[i]
+    ar.append(p)
+    ar.append(n)
+           
+    return ar
+```
+
+![](https://i.imgur.com/wC9cssB.png)
+
+---
+
+## Remove String Spaces
+> [See on CodeWars.com](https://www.codewars.com/kata/57eae20f5500ad98e50002c5)
+
+### **Definition**  
+Simple, remove the spaces from the string, then return the resultant string.
+
+#### **Example:**
+```
+no_space('8aaaaa dddd r     ') => '8aaaaaddddr
+```
+:sparkles: 
+
+### **Given Code**
+```python
+def no_space(x):
+    #your code here
+```
+
+### **Solution Code**
+```python
+def no_space(x):
+    return x.replace(" ",'')
+```
+
+:arrow_down_small: 
+```python
+def no_space(x):
+    char = ''
+    for i in range(len(x)):
+        if x[i] == ' ':
+            continue
+        else:
+            char = char + x[i]
+    return char
+```
+
+![](https://i.imgur.com/4wWmcsj.png)
+
+---
+
+## Merge two sorted arrays into one
+> [See on CodeWars.com](https://www.codewars.com/kata/5899642f6e1b25935d000161)
+
+### **Definition**  
+You are given two sorted arrays that both only contain integers. Your task is to find a way to merge them into a single one, sorted in asc order. Complete the function mergeArrays(arr1, arr2), where arr1 and arr2 are the original sorted arrays.
+
+You don't need to worry about validation, since arr1 and arr2 must be arrays with 0 or more Integers. If both arr1 and arr2 are empty, then just return an empty array.
+
+Note: arr1 and arr2 may be sorted in different orders. Also arr1 and arr2 may have same integers. Remove duplicated in the returned result.
+
+#### **Example:**
+```
+arr3 = [1, 3, 5, 7, 9];
+arr4 = [10, 8, 6, 4, 2];
+merge_arrays(arr3, arr4);  // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+:sparkles: 
+
+### **Given Code**
+```python
+def merge_arrays(arr1, arr2):
+    pass
+```
+
+### **Solution Code**
+```python
+def merge_arrays(arr1, arr2):
+    result = []
+    for i in arr1:
+        if i not in result:
+            result.append(i)
+    for i in arr2:
+        if i not in result:
+            result.append(i)
+    result.sort()
+    return result
+```
+
+:arrow_down_small: 
+```python
+def merge_arrays(arr1, arr2):
+    return sorted(set(arr1+arr2))
+```
+
+![](https://i.imgur.com/Yjv6xSQ.png)
 
 
 <style>.markdown-body { max-width: 1000px; }</style>
