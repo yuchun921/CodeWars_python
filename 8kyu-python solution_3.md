@@ -511,6 +511,61 @@ def greet():
 
 ---
 
+## Function 2 - squaring an argument
+> [See on CodeWars.com](https://www.codewars.com/kata/523b623152af8a30c6000027)
+
+### **Definition**  
+Now you have to write a function that takes an argument and returns the square of it.
+
+#### **Example:**
+```
+square(3) => 9
+```
+
+### **Given Code**
+```python
+def square(n):
+    pass
+```
+
+### **Solution Code**
+```python
+def square(n):
+    return n**2
+```
+
+![](https://i.imgur.com/BGBnj1I.png)
+
+---
+
+## Function 3 - multiplying two numbers
+> [See on CodeWars.com](https://www.codewars.com/kata/523b66342d0c301ae400003b)
+
+### **Definition**  
+Implement a function which multiplies two numbers.
+
+#### **Example:**
+```
+multiply(2, 3) -> 6
+```
+
+>:sparkles: 寫一個方法讓值相乘
+
+### **Given Code**
+```python
+#your code here
+```
+
+### **Solution Code**
+```python
+def multiply(a, b):
+    return a*b
+```
+
+![](https://i.imgur.com/ejZETL9.png)
+
+---
+
 ## UEFA EURO 2016
 > [See on CodeWars.com](https://www.codewars.com/kata/57613fb1033d766171000d60)
 
@@ -590,6 +645,40 @@ def get_grade(s1, s2, s3):
 
 ---
 
+## Grasshopper - Variable Assignment Debug
+> [See on CodeWars.com](https://www.codewars.com/kata/5612e743cab69fec6d000077)
+
+### **Definition**  
+Fix the variables assigments so that this code stores the string 'devLab' in the variable name.
+
+#### **Example:**
+```
+name = a+b
+```
+
+>:sparkles:
+![](https://i.imgur.com/k9t7g8W.png)
+
+### **Given Code**
+```python
+a == "dev"
+b == "Lab"
+
+name == a + b
+```
+
+### **Solution Code**
+```python
+a ="dev"
+b ="Lab"
+
+name =a + b
+```
+
+![](https://i.imgur.com/quM5jfx.png)
+
+---
+
 ## Beginner - Reduce but Grow
 > [See on CodeWars.com](https://www.codewars.com/kata/57f780909f7e8e3183000078)
 
@@ -632,7 +721,7 @@ For the beginner, try to use the map method - it comes in very handy quite a lot
 
 #### **Example:**
 ```
-1, 2, 3] --> [2, 4, 6]
+[1, 2, 3] --> [2, 4, 6]
 ```
 
 >:sparkles: 輸出array內兩倍的值
@@ -650,4 +739,426 @@ def maps(a):
     return list(map(lambda a: a * 2, a))
 ```
 
-![](https://i.imgur.com/eOkOpIB.png)
+![](https://i.imgur.com/77KvA3T.png)
+
+---
+
+## Get the mean of an array
+> [See on CodeWars.com](https://www.codewars.com/kata/563e320cee5dddcf77000158)
+
+### **Definition**  
+It's the academic year's end, fateful moment of your school report. The averages must be calculated. All the students come to you and entreat you to calculate their average for them. Easy !  
+You just need to write a script.
+
+Return the average of the given array `rounded down` to its nearest integer.
+
+The array will never be empty.
+
+#### **Example:**
+```
+get_average([1, 5, 87, 45, 8, 8]) => 25
+```
+
+>:sparkles: 
+
+### **Given Code**
+```python
+def get_average(marks):
+    raise NotImplementedError("TODO: get_average")
+
+```
+
+### **Solution Code**
+```python
+import math
+def get_average(marks):
+    sum = 0
+    for i in marks:
+        sum += i
+    avg = sum/len(marks)
+    return math.floor(avg)
+    raise NotImplementedError("TODO: get_average")
+```
+
+:arrow_down_small: 
+```python
+def get_average(marks):
+    return sum(marks)//len(marks)
+```
+
+![](https://i.imgur.com/ANXXrud.png)
+
+---
+
+## Do I get a bonus?
+> [See on CodeWars.com](https://www.codewars.com/kata/56f6ad906b88de513f000d96)
+
+### **Definition**  
+It's bonus time in the big city! The fatcats are rubbing their paws in anticipation... but who is going to make the most money?
+
+Build a function that takes in two arguments (salary, bonus). Salary will be an integer, and bonus a boolean.
+
+If bonus is true, the salary should be multiplied by 10. If bonus is false, the fatcat did not make enough money and must receive only his stated salary.
+
+Return the total figure the individual will receive as a string prefixed with "£" (= "\u00A3", JS, Go, Java and Julia), `"$" (C#, C++, Ruby, Clojure, Elixir, PHP, Python, Haskell and Lua)` or "¥" (Rust).
+#### **Example:**
+```
+bonus_time(2, True) => '$20'
+bonus_time(78, False) => '$78'
+```
+
+>:sparkles: 
+
+### **Given Code**
+```python
+def bonus_time(salary, bonus):
+    #your code here
+```
+
+### **Solution Code**
+```python
+def bonus_time(salary, bonus):
+    if bonus:
+        salary = salary*10
+    return f'${salary}'
+```
+
+:arrow_down_small: 
+簡化寫法QQ
+```python
+def bonus_time(salary, bonus):
+    return f'${salary * 10 if bonus else salary}'
+```
+
+![](https://i.imgur.com/ANXXrud.png)
+
+---
+
+## Find the first non-consecutive number
+> [See on CodeWars.com](https://www.codewars.com/kata/58f8a3a27a5c28d92e000144)
+
+### **Definition**  
+Your task is to find the first element of an array that is not consecutive.
+
+By not consecutive we mean not exactly 1 larger than the previous element of the array.
+
+E.g. If we have an array [1,2,3,4,6,7,8] then 1 then 2 then 3 then 4 are all consecutive but 6 is not, so that's the first non-consecutive number.
+
+If the whole array is consecutive then return null2.
+
+The array will always have at least 2 elements1 and all elements will be numbers. The numbers will also all be unique and in ascending order. The numbers could be positive or negative and the first non-consecutive could be either too!
+#### **Example:**
+```
+first_non_consecutive([4,5,6,7,8,9,11]) => 11
+first_non_consecutive([31,32]) => None
+```
+
+>:sparkles: 
+
+### **Given Code**
+```python
+def first_non_consecutive(arr):
+    #your code here
+```
+
+### **Solution Code**
+```python
+def first_non_consecutive(arr):
+    for i in range(len(arr)-1):
+        if arr[i+1]-arr[i] != 1:
+            return arr[i+1]
+    return None
+```
+
+![](https://i.imgur.com/yXuT071.png)
+
+---
+
+## get character from ASCII Value
+> [See on CodeWars.com](https://www.codewars.com/kata/55ad04714f0b468e8200001c)
+
+### **Definition**  
+Write a function which takes a number and returns the corresponding ASCII char for that value.
+
+#### **Example:**
+```
+get_char(65) => 'A'
+```
+
+>:sparkles: 
+
+### **Given Code**
+```python
+def get_char(c):
+  # Your code goes here ^_^
+  return
+```
+
+### **Solution Code**
+```python
+def get_char(c):
+  return chr(c)
+```
+
+![](https://i.imgur.com/auFWpyv.png)
+
+---
+
+## L1: Bartender, drinks!
+> [See on CodeWars.com](https://www.codewars.com/kata/568dc014440f03b13900001d)
+
+### **Definition**  
+Complete the function that receives as input a string, and produces outputs according to the following table:  
+![](https://i.imgur.com/VoiOyOx.png)
+
+
+#### **Example:**
+```
+get_char(65) => 'A'
+```
+
+>:sparkles: 
+
+### **Given Code**
+```python
+def get_drink_by_profession(param):
+    # code me!
+```
+
+### **Solution Code**
+```python
+def get_drink_by_profession(param):
+    if param.title() == 'Jabroni':
+        return 'Patron Tequila'
+    elif param.title() == 'School Counselor':
+        return 'Anything with Alcohol'
+    elif param.title() == 'Programmer':
+        return 'Hipster Craft Beer'
+    elif param.title() == 'Bike Gang Member':
+        return 'Moonshine'
+    elif param.title() == 'Politician':
+        return 'Your tax dollars'
+    elif param.title() == 'Rapper':
+        return 'Cristal'
+    else:
+        return 'Beer'
+```
+
+![](https://i.imgur.com/oH9iEuj.png)
+
+---
+
+## Gravity Flip
+> [See on CodeWars.com](https://www.codewars.com/kata/5f70c883e10f9e0001c89673)
+
+### **Definition**  
+If you've completed this kata already and want a bigger challenge, here's the 3D version
+
+Bob is bored during his physics lessons so he's built himself a toy box to help pass the time. The box is special because it has the ability to change gravity.
+
+
+#### **Example:**
+```
+flip('R', [3, 2, 1, 2])     =>  [1, 2, 2, 3]
+flip('L', [1, 4, 5, 3, 5])  =>  [5, 5, 4, 3, 1]
+```
+
+>:sparkles: 
+
+### **Given Code**
+```python
+def flip(d, a):
+    # Do some magic
+```
+
+### **Solution Code**
+```python
+def flip(d, a):
+    if d == 'R':
+        a.sort()
+    elif d == 'L':
+        a.sort(reverse=True)
+    return a
+```
+
+![](https://i.imgur.com/oH9iEuj.png)
+
+---
+
+## Super Duper Easy
+> [See on CodeWars.com](https://www.codewars.com/kata/55a5bfaa756cfede78000026)
+
+### **Definition**  
+Make a function that returns the value multiplied by 50 and increased by 6. If the value entered is a string it should return "Error".
+
+#### **Example:**
+```
+problem("hello") => "Error"
+problem(1) => 56
+```
+
+>:sparkles: 
+
+### **Given Code**
+```python
+def problem(a):
+    #Easy Points ^_^
+```
+
+### **Solution Code**
+```python
+def problem(a):
+    if type(a) == str:
+        return 'Error'
+    else:
+        return a*50+6
+```
+
+![](https://i.imgur.com/kSswPLb.png)
+
+---
+
+## Are arrow functions odd?
+> [See on CodeWars.com](https://www.codewars.com/kata/559f80b87fa8512e3e0000f5)
+
+### **Definition**  
+Time to test your basic knowledge in functions!  
+Return the odds from a list:
+
+#### **Example:**
+```
+[1, 2, 3, 4, 5]  -->  [1, 3, 5]
+[2, 4, 6]        -->  []
+```
+
+>:sparkles: 
+
+### **Given Code**
+```python
+odds = lambda: 
+```
+
+### **Solution Code**
+```python
+def odds(x):
+    arr = []
+    for i in x:
+        if i % 2 != 0:
+            arr.append(i)
+    return arr
+```
+
+![](https://i.imgur.com/CnwYqkI.png)
+
+---
+
+## Parse nice int from char problem
+> [See on CodeWars.com](https://www.codewars.com/kata/557cd6882bfa3c8a9f0000c1)
+
+### **Definition**  
+Ask a small girl - "How old are you?". She always says strange things... Lets help her!
+
+For correct answer program should return int from 0 to 9.
+
+Assume test input string always valid and may look like "1 year old" or "5 years old", etc.. The first char is number only.
+
+#### **Example:**
+```
+get_age("4 years old") =>4
+get_age("5 years old") =>5
+```
+
+>:sparkles: 
+
+### **Given Code**
+```python
+def get_age(age):
+    #your code here
+```
+
+### **Solution Code**
+```python
+def get_age(age):
+    return int(age[0])
+```
+
+![](https://i.imgur.com/niTGGl1.png)
+
+---
+
+## N-th Power
+> [See on CodeWars.com](https://www.codewars.com/kata/57d814e4950d8489720008db)
+
+### **Definition**  
+This kata is from check py.checkio.org
+
+You are given an array with positive numbers and a non-negative number N. You should find the N-th power of the element in the array with the index N. If N is outside of the array, then return -1. Don't forget that the first element has the index 0.
+
+#### **Example:**
+```
+array = [1, 2, 3, 4] and N = 2, then the result is 3^2 == 9;
+array = [1, 2, 3] and N = 3, but N is outside of the array, so the result is -1.
+```
+
+>:sparkles: 
+
+### **Given Code**
+```python
+def index(array, n):
+```
+
+### **Solution Code**
+```python
+def index(array, n):
+    if n >= len(array):
+        return -1
+    else:
+        return array[n]**n
+```
+
+![](https://i.imgur.com/Hi7lkyH.png)
+
+---
+
+## Ensure question
+> [See on CodeWars.com](https://www.codewars.com/kata/5866fc43395d9138a7000006)
+
+### **Definition**  
+Given a string, write a function that returns the string with a question mark ("?") appends to the end, unless the original string ends with a question mark, in which case, returns the original string.
+
+#### **Example:**
+```
+ensure_question("Yes") == "Yes?" 
+ensure_question("No?") == "No?"
+```
+
+>:sparkles: 
+
+### **Given Code**
+```python
+def ensure_question(s):
+    # Code here
+```
+
+### **Solution Code**
+```python
+def ensure_question(s):
+    if len(s)>0:
+        if s[-1] == '?':
+            return s
+    return f'{s}?'
+```
+
+:arrow_down_small: 
+```python
+def ensure_question(s):
+    if not s.endswith("?"):
+            return s + "?"
+        return s
+```
+
+![](https://i.imgur.com/UXu9xKL.png)
+
+
+
+
