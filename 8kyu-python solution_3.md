@@ -443,5 +443,211 @@ def positive_sum(arr):
 
 ![](https://i.imgur.com/FAz85bo.png)
 
+---
 
+## Total pressure calculation
+> [See on CodeWars.com](https://www.codewars.com/kata/5b7ea71db90cc0f17c000a5a)
 
+### **Definition**  
+Given the molecular mass of two molecules M~1~ and M~2~ , their masses present m~1~ and m~2~ in a vessel of volume Vat a specific temperature T, find the total pressure P~total~ exerted by the molecules.  
+Formula to calculate the pressure is:  
+![](https://i.imgur.com/uomTaTy.png)
+
+#### **Example:**
+```
+solution(44, 30, 3, 2, 5, 50) => 0.7146511212121212
+```
+>:sparkles:
+
+### **Given Code**
+```python
+def solution(M1, M2, m1, m2, V, T) :
+    # your code goes here
+```
+
+### **Solution Code**
+```python
+def solution(M1, M2, m1, m2, V, T) :
+    M1 = m1 * 0.001/M1;
+    M2 = m2 * 0.001/M2;
+    T = T + 273.15;
+    R = 0.082;
+    
+    return (((M1 + M2) * R * T) / V) * 1000;
+```
+
+![](https://i.imgur.com/b6fNBAQ.png)
+
+---
+
+## Function 1 - hello world
+> [See on CodeWars.com](https://www.codewars.com/kata/523b4ff7adca849afe000035)
+
+### **Definition**  
+Description:  
+Make a simple function called greet that returns the most-famous "hello world!".
+
+Style Points  
+Sure, this is about as easy as it gets. But how clever can you be to create the most creative hello world you can think of? What is a "hello world" solution you would want to show your friends?
+
+#### **Example:**
+```
+solution(44, 30, 3, 2, 5, 50) => 0.7146511212121212
+```
+>:sparkles:
+
+### **Given Code**
+```python
+# Write a function `greet` that returns "hello world!"
+```
+
+### **Solution Code**
+```python
+def greet():
+    return 'hello world!'
+```
+
+![](https://i.imgur.com/AuxhI9g.png)
+
+---
+
+## UEFA EURO 2016
+> [See on CodeWars.com](https://www.codewars.com/kata/57613fb1033d766171000d60)
+
+### **Definition**  
+Finish the uefaEuro2016() function so it return string just like in the examples below.
+
+#### **Example:**
+```
+uefa_euro_2016(['Germany', 'Ukraine'],[2, 0])
+=> "At match Germany - Ukraine, Germany won!"
+uefa_euro_2016(['Belgium', 'Italy'],[0, 2])
+=> "At match Belgium - Italy, Italy won!"
+uefa_euro_2016(['Portugal', 'Iceland'],[1, 1])
+=> "At match Portugal - Iceland, teams played draw."
+```
+>:sparkles:
+
+### **Given Code**
+```python
+def uefa_euro_2016(teams, scores):
+    pass
+```
+
+### **Solution Code**
+```python
+def uefa_euro_2016(teams, scores):
+    if scores[0] > scores[1]:
+        return f'At match {teams[0]} - {teams[1]}, {teams[0]} won!'
+    elif scores[0] < scores[1]:
+        return f'At match {teams[0]} - {teams[1]}, {teams[1]} won!'
+    elif scores[0] == scores[1]:
+        return f'At match {teams[0]} - {teams[1]}, teams played draw.'
+```
+
+![](https://i.imgur.com/ZBIqWc1.png)
+
+---
+
+## Grasshopper - Grade book
+> [See on CodeWars.com](https://www.codewars.com/kata/55cbd4ba903825f7970000f5)
+
+### **Definition**  
+Complete the function so that it finds the average of the three scores passed to it and returns the letter value associated with that grade.
+
+#### **Example:**
+```
+get_grade(82, 85, 87) => "B"
+get_grade(44, 55, 52) => "F"
+```
+
+>:sparkles:
+![](https://i.imgur.com/k9t7g8W.png)
+
+### **Given Code**
+```python
+def get_grade(s1, s2, s3):
+    # Code here
+    return "F"
+```
+
+### **Solution Code**
+```python
+def get_grade(s1, s2, s3):
+    avg = (s1+s2+s3)/3
+    if 90 <= avg <= 100:
+        return 'A'
+    elif 80 <= avg < 90:
+        return 'B'
+    elif 70 <= avg < 80:
+        return 'C'
+    elif 60 <= avg < 70:
+        return 'D'
+    return "F"
+```
+
+![](https://i.imgur.com/jrdJcGO.png)
+
+---
+
+## Beginner - Reduce but Grow
+> [See on CodeWars.com](https://www.codewars.com/kata/57f780909f7e8e3183000078)
+
+### **Definition**  
+Given a non-empty array of integers, return the result of multiplying the values together in order. 
+
+#### **Example:**
+```
+[1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+```
+
+>:sparkles:
+
+### **Given Code**
+```python
+def grow(arr):
+    pass
+```
+
+### **Solution Code**
+```python
+def grow(arr):
+    result = 1
+    for i in arr:
+        result = result * i
+    return result
+```
+
+![](https://i.imgur.com/eOkOpIB.png)
+
+---
+
+## Beginner - Lost Without a Map
+> [See on CodeWars.com](https://www.codewars.com/kata/57f781872e3d8ca2a000007e)
+
+### **Definition**  
+Given an array of integers, return a new array with each value doubled. 
+
+For the beginner, try to use the map method - it comes in very handy quite a lot so is a good one to know.
+
+#### **Example:**
+```
+1, 2, 3] --> [2, 4, 6]
+```
+
+>:sparkles: 輸出array內兩倍的值
+
+### **Given Code**
+```python
+def maps(a):
+    pass
+```
+
+### **Solution Code**
+:speech_balloon: [Lambda用法參考](https://www.learncodewithmike.com/2019/12/python-lambda-functions.html)
+```python
+def maps(a):
+    return list(map(lambda a: a * 2, a))
+```
+
+![](https://i.imgur.com/eOkOpIB.png)
